@@ -4,13 +4,13 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import { useState } from 'react';
 import Alerts from './components/Alerts';
-import About from './components/About';
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-} from "react-router-dom";
+// import About from './components/About';
+// import {
+//   BrowserRouter as Router,
+//   Link,
+//   Route,
+//   Routes,
+// } from "react-router-dom";
 
 function App() {
   // tells whether darkmode is enabled or not
@@ -24,6 +24,7 @@ function App() {
           showAlert("Dark Mode has been enabled","success");
           document.title = "TextUtils - DarkMode";
           setInterval(() => {
+            // setting the title
             document.title = "TextItils is amazing";
           }, 2000);
           setInterval(()=>{
@@ -58,14 +59,15 @@ function App() {
 
       <Alerts alert={alert} />
 
-      <Router>
+      {/* <Router> */}
       <div className="container my-3">
-        <Routes>
-          <Route path="/" element={<TextForm heading = "Enter the text to analyze" mode={mode} showAlert={showAlert}/>} /> 
-          <Route path="/about" element={<About />} />
-        </Routes>
+        {/* <Routes> */}
+          {/* <Route path="/" element={<TextForm heading = "Enter the text to analyze" mode={mode} showAlert={showAlert}/>} />  */}
+          <TextForm heading = "Enter the text to analyze" mode={mode} showAlert={showAlert}/>
+          {/* <Route path="/about" element={<About />} /> */}
+        {/* </Routes> */}
       </div>
-      </Router>
+      {/* </Router> */}
 
     </>
   );
